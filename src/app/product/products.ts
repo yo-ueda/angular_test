@@ -1,0 +1,22 @@
+export const products = [
+          {
+            name:'カリカリ',
+            weight:'10g',
+            coverImage:'./assets/img/phone-cover.jpg',
+          },
+          {
+            name:'かつおさん',
+            weight:'20g',
+            coverImage:'./assets/img/placeholder.png',
+          },
+          {
+            name:'缶詰',
+            weight:'',
+            coverImage:'./assets/img/phone-cover.jpg',
+          },
+          {
+            name:'ちゅ～る',
+            weight:'5g',
+            coverImage:'./assets/img/phone-cover.jpg',
+          }
+        ];
