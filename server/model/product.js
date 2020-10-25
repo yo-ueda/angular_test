@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const ProductSchema = new Schema({
   //author: ObjectId,
   name: {type:String,required:true,max:[60,'最大60文字までです']},
-  weight: Number,
+  weight: String,
   coverImage: String
 })
 
