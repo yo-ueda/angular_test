@@ -9,10 +9,11 @@ const productRoutes = require('./routes/products')
 mongoose.connect(config.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-/*   useFindAndModify: false,
-  useCreateIndex: true */
+  useFindAndModify: true,
+  useCreateIndex: true
 }).then(
   () => {
+    console.log('DB connect OK!')
     const fakeDb = new FakeDb()
     fakeDb.initDb()
   }
@@ -22,9 +23,9 @@ const app = express()
 
 app.use('/api/v1/products/' , productRoutes)
 
-/* app.get('/products',function(req,res){
+app.get('/products',function(req,res){
   res.json({'success': true})
-}) */
+})
 
 const PORT = process.env.PORT || '3001'
 

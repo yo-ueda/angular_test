@@ -1,24 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const product = require('../model/product')
-
-
+const Product = require('../model/product')
 
 
 router.get('', function( req, res) {
-  product.find({}, function(err, foundProducts){
+  Product.find({}, function(err, foundProduct){
+    return res.json(foundProduct)
   })
-  return res.json(foundProducts)
 })
 
 router.get('/:productId', function( req, res) {
   const productId = req.params.productId
-  product.findById(productId, function(err, foundProduct){
+  Product.findById(productId, function(err, foundProduct){
     if(err){
       return res.status(422).send({errors: [{title:'error',detail:'product not found!!!'}]})
     }
+    return res.json(foundProduct)
   })
-  return res.json(foundProduct)
 })
 
 module.exports = router
